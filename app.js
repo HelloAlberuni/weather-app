@@ -4,12 +4,12 @@ const ui = new UI();
 // Make HTTP Request
 let request = weather.getData();
 
-request.then(function(data){
+request.then(function(weatherData){
     // update weather based on current location
     let dateNow = new Date(),
-        days = ['Sunday', 'Monday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-];
+        days = ['Sunday', 'Monday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
     let today = {};
     today.day = days[dateNow.getDay()];
     today.date = dateNow.getDate();
@@ -17,9 +17,7 @@ request.then(function(data){
     today.year = dateNow.getFullYear();
 
 
-    // ui.updateWeather();
-
-    console.log(data);
+    ui.updateWeather(today, weatherData);
 });
 
 
