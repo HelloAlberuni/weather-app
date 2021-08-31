@@ -6,10 +6,12 @@ class Weather{
     }
 
     async getData(){
-        let currentWeatherResponse = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}`);
+        let currentWeatherResponse = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`);
         let currentWeather = await currentWeatherResponse.json();
 
-        let next3DaysResponse =  await fetch(`//api.openweathermap.org/data/2.5/forecast/?q=${this.city}&cnt=${this.daysCount}&appid=${this.apiKey}`);
+        console.log(currentWeather);
+
+        let next3DaysResponse =  await fetch(`//api.openweathermap.org/data/2.5/forecast/?q=${this.city}&cnt=${this.daysCount}&appid=${this.apiKey}&units=metric`);
         let next3DaysWeather = await next3DaysResponse.json();
 
         return {

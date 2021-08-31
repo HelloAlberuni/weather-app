@@ -11,12 +11,13 @@ request.then(function(weatherData){
         months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
     let today = {};
+    today.dayNumber = dateNow.getDay();
     today.day = days[dateNow.getDay()];
+    today.days = days;
     today.date = dateNow.getDate();
     today.month = months[dateNow.getMonth()].slice(0, 3);
     today.year = dateNow.getFullYear();
-
-
+    
     ui.updateWeather(today, weatherData);
 });
 
