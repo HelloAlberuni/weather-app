@@ -24,7 +24,6 @@ class UI{
         // convert wind unit m/sec to km/hour
         $wind.innerHTML = Math.ceil(weatherData.currentWeather.wind.speed*3.6) + ' km/h';
 
-        var test = '';
         $weekList.innerHTML = '';
         for(let i = 0; i < 4; i++){
             let li = document.createElement('li');

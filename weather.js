@@ -5,18 +5,20 @@ class Weather{
         this.daysCount = 4;
     }
 
-    async getData(){
-        let currentWeatherResponse = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`);
-        let currentWeather = await currentWeatherResponse.json();
+    // async getData(){
+    //     if(geoplugin_city()){
+    //         this.city = geoplugin_city();
+    //     }
+        
+    //     let currentWeatherResponse = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`);
+    //     let currentWeather = await currentWeatherResponse.json();
 
-        console.log(currentWeather);
+    //     let next3DaysResponse =  await fetch(`//api.openweathermap.org/data/2.5/forecast/?q=${this.city}&cnt=${this.daysCount}&appid=${this.apiKey}&units=metric`);
+    //     let next3DaysWeather = await next3DaysResponse.json();
 
-        let next3DaysResponse =  await fetch(`//api.openweathermap.org/data/2.5/forecast/?q=${this.city}&cnt=${this.daysCount}&appid=${this.apiKey}&units=metric`);
-        let next3DaysWeather = await next3DaysResponse.json();
-
-        return {
-            currentWeather,
-            next3DaysWeather
-        };
-    }
+    //     return {
+    //         currentWeather,
+    //         next3DaysWeather
+    //     };
+    // }
 }

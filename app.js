@@ -1,25 +1,26 @@
 const weather = new Weather();
 const ui = new UI();
+const storage = new Storage();
 
-// Make HTTP Request
-let request = weather.getData();
+// // Make HTTP Request
+// let request = weather.getData();
 
-request.then(function(weatherData){
-    // update weather based on current location
-    let dateNow = new Date(),
-        days = ['Sunday', 'Monday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+// request.then(function(weatherData){
+//     // update weather based on current location
+//     let dateNow = new Date(),
+//         days = ['Sunday', 'Monday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+//         months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
-    let today = {};
-    today.dayNumber = dateNow.getDay();
-    today.day = days[dateNow.getDay()];
-    today.days = days;
-    today.date = dateNow.getDate();
-    today.month = months[dateNow.getMonth()].slice(0, 3);
-    today.year = dateNow.getFullYear();
+//     let today = {};
+//     today.dayNumber = dateNow.getDay();
+//     today.day = days[dateNow.getDay()];
+//     today.days = days;
+//     today.date = dateNow.getDate();
+//     today.month = months[dateNow.getMonth()].slice(0, 3);
+//     today.year = dateNow.getFullYear();
     
-    ui.updateWeather(today, weatherData);
-});
+//     ui.updateWeather(today, weatherData);
+// });
 
 
 
