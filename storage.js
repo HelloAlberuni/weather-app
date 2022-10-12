@@ -21,19 +21,28 @@ class Storage{
     }
 
     setLocation( name ){
-        var latlong = '';
-        localStorage.setItem( 'azp_location', latlong );
+        // var latlong = '';
+        localStorage.setItem( 'azp_location', name );
     }
 
     getLocation(){
-        var latlong = ''
+        // var latlong = ''
 
+        // if( localStorage.getItem('azp_location') == null ){
+        //     latlong = this.convertLocationNameToLatlong(this.city);
+        // } else {
+        //     latlong = localStorage.getItem('azp_location');
+        // }
+
+        // return latlong;
+
+        var city_name = '';
         if( localStorage.getItem('azp_location') == null ){
-            latlong = this.convertLocationNameToLatlong(this.city);
+            city_name = this.city;
         } else {
-            latlong = localStorage.getItem('azp_location');
+            city_name = localStorage.getItem('azp_location');
         }
 
-        return latlong;
+        return city_name;
     }
 }

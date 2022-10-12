@@ -1,5 +1,7 @@
 class UI{
     constructor() {
+        const storage = new Storage();
+
         this.date_now = new Date();
         this.days = UI.getDays();
         this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
@@ -15,12 +17,8 @@ class UI{
         this.full_date = `${today.date} ${today.month} ${today.year}`;
         
         // Location
-        this.location_name = '';
+        this.location_name = storage.getLocation();
         this.country_code = '';
-
-        if(!this.location_name){
-            this.location_name = 'Dhaka';
-        }
 
         if(!this.country_code){
             this.country_code = 'BD';
@@ -51,7 +49,7 @@ class UI{
         $date.textContent = this.full_date;
 
         // Update location name
-        $location.textContent = `${this.location_name}, ${this.country_code}`;
+        $location.textContent = `${storage.getLocation()}, ${this.country_code}`;
 
         // Update temp
         $todayTemp.innerHTML = Number.parseInt(weatherData.current.temp) + '°C';

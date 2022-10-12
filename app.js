@@ -1,6 +1,6 @@
 const ui = new UI();
 const weather = new Weather();
-// const storage = new Storage();
+const storage = new Storage();
 
 // When page is loaded show weather data by default location
 document.addEventListener('DOMContentLoaded', function(){
@@ -22,6 +22,36 @@ document.addEventListener('DOMContentLoaded', function(){
 
         ui.update(weatherData);
     });
+});
+
+// Click on the change location button
+$button = document.querySelector('.location-button');
+$button.addEventListener('click', function(){
+    let city_name = prompt('Please enter your city name.', 'Dhaka,BD');
+
+    if( city_name ){
+        // Store the city name
+        storage.setLocation( city_name );
+        
+        weather.getData().then( res => {
+            // prepare weather data
+            var weatherData = {
+                current: {
+                    // city: '',
+                    // day: '',
+                    // full_date: '', // 00 jan 1669
+                    temp: res.currentWeather.main.temp,
+                    temp_kind: res.currentWeather.weather[0].description.slice(0,1).toUpperCase()+ res.currentWeather.weather[0].description.slice( 1, 9999),
+                    feels_like: res.currentWeather.main.feels_like,
+                    humidity: res.currentWeather.main.humidity,
+                    wind: ''
+                },
+                next_days: res.next3DaysWeather.list
+            }
+    
+            ui.update(weatherData);
+        });
+    }
 });
 
 // // Make HTTP Request
