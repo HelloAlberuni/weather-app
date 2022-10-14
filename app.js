@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', getWeather());
 // Click on the change location button
 $button = document.querySelector('.location-button');
 $button.addEventListener('click', function(){
-    let city_name = prompt('Please enter your city name.', 'Dhaka,BD');
+    let city_name = '';
+    // Open modal
+    document.querySelector('.location-select').style.display = 'block';
 
     if( city_name ){
         // Store the city name
@@ -38,6 +40,11 @@ function getWeather(){
         ui.update(weatherData);
     });
 }
+
+// Close modal
+document.querySelector('.modal .close').addEventListener('click', function(){
+    document.querySelector('.modal').style.display = 'none';
+});
 
 // // Make HTTP Request
 // let request = weather.getData();
