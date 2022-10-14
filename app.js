@@ -30,7 +30,7 @@ function getWeather(){
                 temp_kind: res.currentWeather.weather[0].description.slice(0,1).toUpperCase()+ res.currentWeather.weather[0].description.slice( 1, 9999),
                 feels_like: res.currentWeather.main.feels_like,
                 humidity: res.currentWeather.main.humidity,
-                wind: res.currentWeather.wind.speed
+                wind: res.currentWeather.wind.speed,
             },
             next_days: res.next3DaysWeather.list
         }
