@@ -125,12 +125,12 @@ body {
     position: relative;
     float: left;
     height: 100%;
-    padding-top: 25px;
+    padding-top: 15px;
 }
 
 .today-info {
     padding: 15px;
-    margin: 0 25px 25px 25px;
+    margin: 0 25px 0 25px;
 /*  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
     border-radius: 10px;
 }
@@ -193,7 +193,7 @@ body {
 
 .week-list>li .day-name {
     display: block;
-    margin: 10px 0 0 0;
+    margin: 0;
     text-align: center;
     color: #000;
 }
@@ -253,4 +253,42 @@ body {
     height: 1em;
     width: auto;
     margin-right: 5px;
+}
+
+/* Responsive CSS
+======================================================= */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+@media only screen and (max-width: 767px) {
+    body {
+        align-items: flex-start;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 25px;
+    }
+    .weather-gradient {
+        opacity: 0.9;
+    }
+    .weather-side {
+        width: 90%;
+        height: 250px;
+    }
+    .container {
+        background-color: unset;
+    }
+    .weather-side:hover {
+        transform: scale(1);
+        box-shadow: none;
+    }
+    .week-list {
+        margin: 10px 25px;
+    }
+    .week-list>li {
+        padding: 5px;
+    }
+    .today-info {
+        margin: 0 10px 0 10px;
+    }
 }

@@ -64,7 +64,7 @@ class UI{
         $humidity.innerHTML = weatherData.current.humidity + '%';
 
         // Wind
-        // convert wind unit m/sec to km/hour
+        // convert wind unit m/sec to km/hour);
         $wind.innerHTML = Math.round(weatherData.current.wind.toFixed(1) * 3.6) + ' km/h';
 
         // Next 4 days
