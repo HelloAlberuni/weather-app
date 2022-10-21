@@ -1,48 +1,23 @@
 class Storage{
     constructor(){
+        // Defaults
         this.city      = 'dhaka';
-        this.apiKey    = '4b45462b359fda05021d1bb246b299e6';
-
-        this.convertLocationNameToLatlong();
-    }
-
-    convertLocationNameToLatlong( name ){
-        var latlong;
-
-        var request = fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${this.city}&limit=1&appid=${this.apiKey}`);
-        
-        
-        request.then((response) => function(){
-            console.log(response);
-            console.log(request);
-        });
-
-        // return latlong;
+        this.country   = 'BD';
     }
 
     setLocation( name ){
-        // var latlong = '';
-        localStorage.setItem( 'azp_location', name );
+        localStorage.setItem( 'sa_city', name );
     }
 
     getLocation(){
-        // var latlong = ''
-
-        // if( localStorage.getItem('azp_location') == null ){
-        //     latlong = this.convertLocationNameToLatlong(this.city);
-        // } else {
-        //     latlong = localStorage.getItem('azp_location');
-        // }
-
-        // return latlong;
-
-        var city_name = '';
-        if( localStorage.getItem('azp_location') == null ){
-            city_name = this.city;
+        var city = '';
+        
+        if( localStorage.getItem('sa_city') == null ){
+            city = this.city;
         } else {
-            city_name = localStorage.getItem('azp_location');
+            city = localStorage.getItem('sa_city');
         }
 
-        return city_name;
+        return city;
     }
 }
