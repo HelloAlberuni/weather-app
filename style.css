@@ -78,6 +78,7 @@ body {
     position: absolute;
     top: 25px;
     left: 25px;
+    color: #222831;
 }
 
 .date-dayname {
@@ -86,6 +87,7 @@ body {
 
 .date-day {
     display: block;
+    margin-top: 4px;
 }
 
 .location {
@@ -159,7 +161,7 @@ body {
     font-weight: bold;
 }
 
-.week-list {
+.days-list {
     list-style-type: none;
     padding: 0;
     margin: 10px 35px;
@@ -169,7 +171,7 @@ body {
     background: #ffffff91;
 }
 
-.week-list>li {
+.days-list>li {
     float: left;
     padding: 15px;
     cursor: pointer;
@@ -179,7 +181,7 @@ body {
     border-radius: 10px;
 }
 
-.week-list>li:hover {
+.days-list>li:hover {
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);
@@ -189,31 +191,31 @@ body {
             box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
 }
 
-.week-list>li.active {
+.days-list>li.active {
     background: #fff;
     color: #222831;
     border-radius: 10px;
 }
 
-.week-list>li .day-name {
+.days-list>li .day-name {
     display: block;
     margin: 0;
     text-align: center;
     color: #000;
 }
 
-.week-list>li .day-icon {
+.days-list>li .day-icon {
     display: block;
     height: 30px;
     width: auto;
     margin: 0 auto;
 }
 
-.week-list>li img{
+.days-list>li img{
     max-width:65px;
 }
 
-.week-list>li .day-temp {
+.days-list>li .day-temp {
     display: block;
     text-align: center;
     margin: 10px 0 0 0;
@@ -373,10 +375,10 @@ body {
         transform: scale(1);
         box-shadow: none;
     }
-    .week-list {
+    .days-list {
         margin: 10px 25px;
     }
-    .week-list>li {
+    .days-list>li {
         padding: 5px;
     }
     .today-info {

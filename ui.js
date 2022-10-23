@@ -24,6 +24,8 @@ class UI{
         return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     }
 
+
+    // Update ui with weather data
     update( weatherData ){
 
         let $day         = document.querySelector('.date-dayname'),
@@ -35,7 +37,7 @@ class UI{
             $feelsLike   = document.querySelector('.precipitation .value'),
             $humidity    = document.querySelector('.humidity .value'),
             $wind        = document.querySelector('.wind .value'),
-            $weekList    = document.querySelector('.week-list'),
+            $dayList     = document.querySelector('.days-list'),
             $city_input  = document.querySelector('.city-input input'),
             output       = '';
 
@@ -73,9 +75,9 @@ class UI{
 
         // Next 4 days
         let $ul = document.createElement('ul');
-            $ul.classList.add('week-list');
+            $ul.classList.add('days-list');
 
-        $weekList.innerHTML = '';
+        $dayList.innerHTML = '';
         weatherData.next_days.map(function(item, i){
 
             let x = i + 1,
@@ -90,10 +92,10 @@ class UI{
                 day_number = day_number - 7;
             }
             
-            let temp = item.main.temp,
+            let temp     = item.main.temp,
                 day_name = UI.getDays()[ + day_number];
 
-            let icon = item.weather[0].icon,
+            let icon      = item.weather[0].icon,
                 icon_desc = item.weather[0].description;
 
             let li = document.createElement('li');
@@ -101,11 +103,13 @@ class UI{
             li.innerHTML += `<img title="${icon_desc}" src="//openweathermap.org/img/wn/${icon}@2x.png" />`;
             li.innerHTML += `<span class="day-name">${day_name.slice(0, 3)}</span>`;
             li.innerHTML += `<span class="day-temp">${Number.parseInt(temp) + '°C'}</span>`;
-            $weekList.appendChild(li);
+            $dayList.appendChild(li);
         });
 
-        let clear = document.createElement('div');
-            clear.classList.add('clear');
-        $weekList.appendChild(clear);
+        let $clear = document.createElement('div');
+            $clear.classList.add('clear');
+
+
+        $dayList.appendChild($clear);
     }
 }

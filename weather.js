@@ -1,6 +1,5 @@
 class Weather{
     constructor(){
-        const storage = new Storage();
         this.apiKey       = '4b45462b359fda05021d1bb246b299e6';
         this.daysCount    = 4;
     }

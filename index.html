@@ -9,6 +9,7 @@
     </head>
     <body>
         <div class="container">
+
             <div class="weather-side">
                 <div class="weather-gradient"></div>
                 <div class="date-container">
@@ -29,7 +30,9 @@
                     <h3 class="weather-desc">Sunny</h3>
                 </div>
             </div>
+
             <div class="info-side">
+
                 <div class="today-info-container">
                     <div class="today-info">
                         <div class="precipitation">
@@ -49,9 +52,10 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="week-container">
                     <div class="next-days">Next 4 Days</div>
-                    <ul class="week-list">
+                    <ul class="days-list">
                         <li class="">
                             <img src="//openweathermap.org/img/wn/03d@2x.png" title="Icon" />
                             <span class="day-name">Sat</span>
@@ -75,15 +79,19 @@
                         <div class="clear"></div>
                     </ul>
                 </div>
+
                 <div class="location-container">
                     <button class="location-button">
                     	<i data-feather="map-pin"></i>
                     	<span>Change location</span>
                     </button>
                 </div>
+
             </div>
         </div>
+
         <div class="location-select modal">
+
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -95,6 +103,7 @@
                 </div>
                 <button class="update-weather">Update</button>
             </div>
+
         </div>
         <script src="weather.js"></script>
         <script src="ui.js"></script>

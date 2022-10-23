@@ -36,6 +36,9 @@ function getWeather(){
     });
 }
 
+/**
+ * > The function `updateDate()` updates the date on the page
+ */
 function updateDate(){
     var date_now = new Date(),
         months   = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
